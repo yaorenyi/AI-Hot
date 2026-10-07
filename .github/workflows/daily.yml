@@ -11,7 +11,8 @@ on:
         required: false
 
 permissions:
-  contents: read
+  # 写回 output/ 让历史各期在仓库累积
+  contents: write
   pages: write
   id-token: write
 
@@ -25,6 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 完整历史,保证 output/ 里已归档的各期都在
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -44,6 +48,23 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
+
+      - name: 回写 output/ 使历史累积
+        env:
+          DATE_INPUT: ${{ inputs.date }}
+        run: |
+          git config user.name  "aihot-bot"
+          git config user.email "aihot-bot@users.noreply.github.com"
+          git add output/
+          if git diff --staged --quiet; then
+            echo "内容无变化,跳过提交"
+            exit 0
+          fi
+          # 提交信息用本次生成的日报文件名,便于回溯
+          NEWEST=$(ls -1t output/*.html | grep -v index.html | head -1 | xargs basename | sed 's/\.html$//')
+          git commit -m "chore: 归档日报 ${NEWEST}"
+          # 定时任务可能与手动触发并发,失败不应让整个 job 失败
+          git push || echo "推送失败(可能被并发任务抢先),下次运行会自动重试"
 
   deploy:
     needs: build

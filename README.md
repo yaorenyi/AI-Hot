@@ -89,19 +89,15 @@ server {
 3. 完成后访问 `https://<用户名>.github.io/<仓库名>/`,即归档索引;`/<仓库名>/YYYY-MM-DD.html` 是某一期日报
 4. 手动触发:Actions 页面点 **Run workflow**
 
-工作流已配好 Pages 发布链路,首次推送后需在 Settings → Pages 把 Source 手动设为 GitHub Actions(新建仓库时这个选项不会自动打开)。
+### 归档累积
 
-想保留历史各期,需要把 `output/` 一起提交;若只靠 Actions 发布,产物只存在于 artifact 和 Pages 上,历史页面不会累积。想要归档累积的话,改用下面的定时提交变体:
+工作流会把每天生成的页面 **回写提交到仓库的 `output/`**,所以历史各期会一直累积:
 
-```yaml
-      - name: 提交变更
-        run: |
-          git config user.name  "aihot-bot"
-          git config user.email "aihot-bot@users.noreply.github.com"
-          git add output/
-          git diff --staged --quiet || git commit -m "chore: 更新日报"
-          git push
-```
+- `output/index.html` 会自动重算,列出全部历史期数与各自条数
+- 站点上可直接访问任意历史日期,例如 `/AI-Hot/2026-10-06.html`
+- 想查看累积效果,看仓库的 commit 记录即可
+
+实现要点:`checkout` 用了 `fetch-depth: 0` 拉完整历史,否则旧文件会被清掉;提交信息自动带上当期日期。若定时任务与手动触发撞车导致推送失败,不会让 job 失败,下次运行会自动补上。
 
 注意:GitHub 仓库如果 60 天无活动会暂停定时任务,长期运行建议每月手动触发一次。
 
