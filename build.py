@@ -635,8 +635,9 @@ body{padding:0}
 .arch-list{display:grid;gap:12px;text-align:left}
 .arch-item{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow);transition:var(--transition)}
 .arch-item:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.arch-left{display:flex;flex-direction:column;gap:2px;min-width:0}
 .arch-date{font-family:var(--font-mono);font-size:1rem;font-weight:700}
-.arch-meta{font-size:0.78rem;color:var(--text-muted);margin-top:2px}
+.arch-meta{font-size:0.78rem;color:var(--text-muted)}
 .arch-go{font-size:0.82rem;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .empty{padding:40px 0;color:var(--text-muted);font-size:0.9rem}
 @media (max-width:768px){.arch{padding:48px 16px 30px}}
@@ -655,9 +656,9 @@ body{padding:0}
 """
 
 ARCH_ITEM = """    <a class="arch-item" href="%(href)s">
-      <span>
+      <span class="arch-left">
         <span class="arch-date">%(date)s</span>
-        <span class="arch-meta">%(weekday)s · %(count)s 条</span>
+        <span class="arch-meta">%(weekday)s · %(count)s</span>
       </span>
       <span class="arch-go">查看 %(arrow)s</span>
     </a>"""
@@ -673,6 +674,7 @@ def build_index(outdir):
     files.sort(reverse=True)
 
     items = []
+    items_dates = []
     for d in files:
         path = os.path.join(outdir, "%s.html" % d)
         try:
@@ -680,7 +682,10 @@ def build_index(outdir):
             cm = re.search(r"<strong>(\d+)</strong>\s*条", content)
             count = int(cm.group(1)) if cm else 0
         except OSError:
-            count = 0
+            continue
+        # 源数据本身为空的期次(AI HOT 未收录任何条目)不入归档,避免误导性的"0 条"
+        if count <= 0:
+            continue
         try:
             y, m, dd = (int(x) for x in d.split("-"))
             wd = WEEKDAY[datetime(y, m, dd).weekday()]
@@ -693,10 +698,12 @@ def build_index(outdir):
             "count": count,
             "arrow": ARROW,
         })
+        items_dates.append(d)
 
     body = "\n".join(items) or '<p class="empty">还没有生成任何日报。</p>'
-    latest = files[0] if files else "—"
-    return INDEX_TPL % {"css": CSS, "count": len(files), "latest": latest, "items": body}
+    # 期数按实际收录条目数统计(items 已排除源数据为空的期次)
+    latest = items_dates[0] if items_dates else "—"
+    return INDEX_TPL % {"css": CSS, "count": len(items), "latest": latest, "items": body}
 
 
 # ---------------------------------------------------------------- main
