@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="aihot-site">
+<title>AI 日报 · 2026-10-14</title>
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-primary:#FFF9F2;--bg-card:#FFFFFF;--bg-elevated:#FFF4E6;
+  --text-primary:#1A1A1A;--text-secondary:#5C5C5C;--text-muted:#8A8A8A;
+  --accent:#FF6B35;--accent-hover:#E85525;--accent-light:#FFE4D6;
+  --gradient:linear-gradient(135deg,#FF6B35 0%,#F7B801 100%);
+  --gradient-soft:linear-gradient(135deg,#FFE4D6 0%,#FFF4D6 100%);
+  --border:#F0E4D4;--border-hover:#FFB89A;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(255,107,53,0.08);
+  --shadow-hover:0 8px 28px rgba(255,107,53,0.16);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"SF Mono","Fira Code",Menlo,Consolas,monospace;
+  --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(255,249,242,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topnav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;overflow-x:auto}
+.topnav-brand{font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topnav-brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gradient);box-shadow:0 0 0 3px var(--accent-light);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--accent-light)}50%{box-shadow:0 0 0 6px rgba(255,107,53,0.15)}}
+.topnav-links{display:flex;gap:6px;flex:1}
+.topnav-links button{appearance:none;border:0;background:transparent;font:inherit;cursor:pointer;font-size:0.85rem;color:var(--text-secondary);padding:6px 12px;border-radius:999px;white-space:nowrap;transition:var(--transition)}
+.topnav-links button:hover,.topnav-links button.active{background:var(--accent-light);color:var(--accent)}
+.hero{padding:80px 24px 60px;text-align:center;background:var(--gradient-soft);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,0.15) 0%,transparent 70%)}
+.hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(247,184,1,0.18) 0%,transparent 70%)}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.date-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);font-size:0.85rem;color:var(--text-secondary);margin-bottom:20px;box-shadow:var(--shadow)}
+.date-badge .live{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:live-pulse 1.6s ease-out infinite}
+@keyframes live-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}100%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+.latest-badge{background:var(--accent-light);color:var(--accent);font-weight:600;padding:1px 8px;border-radius:999px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.hero h1 .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text-secondary);margin-bottom:12px}
+.hero-window{font-size:0.82rem;color:var(--text-muted);margin-bottom:36px}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;box-shadow:var(--shadow);transition:var(--transition)}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--border-hover)}
+.stat-num{font-size:2.2rem;font-weight:800;font-family:var(--font-mono);background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-label{font-size:0.78rem;color:var(--text-muted);margin-top:6px;letter-spacing:0.5px}
+.lead-wrap{max-width:1100px;margin:0 auto;padding:34px 24px 0}
+.lead{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow)}
+.lead .kicker{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:1px;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.lead h3{font-size:1.15rem;font-weight:700;line-height:1.5;margin-bottom:8px;letter-spacing:-0.2px}
+.lead p{font-size:0.92rem;color:var(--text-secondary)}
+.section{padding:52px 24px 20px;scroll-margin-top:64px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:2px dashed var(--border)}
+.section-head .icon{width:34px;height:34px;border-radius:10px;background:var(--gradient);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-head .icon svg{width:18px;height:18px;fill:#fff}
+.section-head h2{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+.section-head .count{font-size:0.8rem;color:var(--accent);background:var(--accent-light);font-family:var(--font-mono);padding:3px 10px;border-radius:999px;margin-left:auto;align-self:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:var(--transition)}
+html.js-ready .card{opacity:0;transform:translateY(16px)}
+html.js-ready .card.visible,.card.visible{opacity:1;transform:none}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.card:hover::before{transform:scaleX(1)}
+.card-num{position:absolute;top:14px;right:18px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:var(--bg-elevated);padding:2px 8px;border-radius:6px}
+.card-title{font-size:1.02rem;font-weight:600;line-height:1.45;margin-bottom:10px;padding-right:48px;letter-spacing:-0.2px}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.card-source{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--text-muted);padding:3px 10px;background:var(--bg-elevated);border-radius:999px;max-width:100%}
+.card-source svg{width:11px;height:11px;flex-shrink:0;opacity:0.6}
+.card-source span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-time{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;color:var(--text-muted);padding:3px 9px;border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);white-space:nowrap}
+.card-summary{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;flex:1}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--accent);margin-top:auto;align-self:flex-start;transition:var(--transition)}
+.card-link svg{width:14px;height:14px;transition:transform 0.2s ease}
+.card-link:hover{color:var(--accent-hover)}
+.card-link:hover svg{transform:translate(2px,-2px)}
+footer{margin-top:60px;padding:40px 24px;text-align:center;border-top:1px solid var(--border);background:var(--bg-elevated)}
+.footer-stats{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;font-size:0.85rem;color:var(--text-secondary)}
+.footer-stats .sep{color:var(--text-muted)}
+.footer-source{font-size:0.78rem;color:var(--text-muted);margin-top:8px}
+.footer-source a{color:var(--accent);font-weight:500}
+.footer-note{font-size:0.74rem;color:var(--text-muted);margin-top:6px}
+@media (max-width:768px){
+  .hero{padding:60px 20px 50px}
+  .lead-wrap{padding:24px 16px 0}
+  .section{padding:42px 16px 12px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:18px}
+  .topnav-inner{padding:12px 16px;gap:14px}
+  .section-head{flex-wrap:wrap;gap:10px}
+  .section-head .count{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="版块导航">
+  <div class="topnav-inner">
+    <div class="topnav-brand"><span class="dot"></span>AI 日报 · 10-14</div>
+    <div class="topnav-links">
+      <button type="button" data-target="sec-model">模型发布</button>
+      <button type="button" data-target="sec-product">产品发布</button>
+      <button type="button" data-target="sec-industry">行业动态</button>
+      <button type="button" data-target="sec-paper">论文研究</button>
+      <button type="button" data-target="sec-tips">技巧与观点</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="date-badge"><span class="live"></span>2026 年 10 月 14 日 · 周三 · 北京时间 </div>
+    <h1>今日 <span class="accent">AI</span> 圈发生了什么</h1>
+    <p class="hero-tagline">Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型</p>
+    <p class="hero-window">收录区间：10 月 13 日 08:00 — 10 月 14 日 08:00（北京时间）</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num" data-target="22">0</div><div class="stat-label">今日条数</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="5">0</div><div class="stat-label">分类版块</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="21">0</div><div class="stat-label">精选信源</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="12">0</div><div class="stat-label">深度条目</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="10">0</div><div class="stat-label">快讯更新</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="lead-wrap"><div class="lead">
+  <span class="kicker">今日头条</span>
+  <h3>Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型</h3>
+  <p>Google 发布 Gemini 4 Argon，面向开发者、企业、科学家和消费者全球开放，可经 Gemini API、AI Studio、Google Antigravity。</p>
+</div></div>
+
+<main>
+<section class="section" id="sec-model">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+    <h2>模型发布 / 更新</h2>
+    <span class="count">5 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">01</span>
+      <h3 class="card-title">Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Google Blog：AI（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Google 发布 Gemini 4 Argon，面向开发者、企业、科学家和消费者全球开放，</p>
+      <a class="card-link" href="https://aihot.news/items/smxxtw5ca2c9jscojk4ppe5hf" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">02</span>
+      <h3 class="card-title">面壁智能开源 MiniCPM-V 4.7，35B-A3B MoE 模型 3GB 内存端侧流畅运行</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>公众号：面壁智能（MiniCPM）</span></span>
+        
+      </div>
+      <p class="card-summary">面壁智能联合 OpenBMB 社区于10月13日发布并开源 MiniCPM-V 4.7，</p>
+      <a class="card-link" href="https://aihot.news/items/fidy0y9chlgs0puyn96qkmj1b" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：面壁智能开源 MiniCPM-V 4.7，35B-A3B MoE 模型 3GB 内存端侧流畅运行">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">03</span>
+      <h3 class="card-title">Liquid AI 发布 LFM2.5-24B-A2B 端侧推理模型</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Liquid AI 模型与工程博客（网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Liquid AI 发布开源权重模型 LFM2.5-24B-A2B，总参数 24B、每 token 激活 2B，</p>
+      <a class="card-link" href="https://aihot.news/items/j0hjfg7ioz2gs0s8msqnafpjj" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Liquid AI 发布 LFM2.5-24B-A2B 端侧推理模型">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">04</span>
+      <h3 class="card-title">Google 用 Gemini 4 Argon 无人值守优化 20 万行 Python 代码库 ADK</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Google Developers Blog（RSS）</span></span>
+        <span class="card-time">昨天 08:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/z371wogdvjh86jh8s6v6vlrui" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Google 用 Gemini 4 Argon 无人值守优化 20 万行 Python 代码库 ADK">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">05</span>
+      <h3 class="card-title">Prime Intellect 收购 Moondream，联合创始人加入主导推理与多模态</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Prime Intellect（网页）</span></span>
+        <span class="card-time">昨天 00:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/rruqd7cz78jq6l889kjp56jlz" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Prime Intellect 收购 Moondream，联合创始人加入主导推理与多模态">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-product">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" fill="none" stroke="#fff" stroke-width="2"/></svg></span>
+    <h2>产品发布 / 更新</h2>
+    <span class="count">7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">06</span>
+      <h3 class="card-title">Google DeepMind 的 Gemini 4 Argon 上线 OpenRouter</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：OpenRouter (@OpenRouter)</span></span>
+        
+      </div>
+      <p class="card-summary">Gemini 4 Argon 已上线 OpenRouter，可通过 Google AI Studio 和 Google</p>
+      <a class="card-link" href="https://aihot.news/items/d4oyzg3qte4pt0ywsonolctwf" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Google DeepMind 的 Gemini 4 Argon 上线 OpenRouter">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">07</span>
+      <h3 class="card-title">Apple 发布 7 英寸智能音箱 HomeView，售价 299 美元并搭载 Siri AI</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Apple：Newsroom（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Apple 发布配备 7 英寸 Liquid Retina 显示屏的 HomeView，</p>
+      <a class="card-link" href="https://aihot.news/items/kjcq4dywmvs5xijl4emac5o40" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Apple 发布 7 英寸智能音箱 HomeView，售价 299 美元并搭载 Siri AI">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">08</span>
+      <h3 class="card-title">NVIDIA 官宣 RTX Spark 软件生态就绪，10 月 16 日笔记本上市</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>NVIDIA Blog（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">NVIDIA 介绍 RTX Spark 平台生态就绪情况，RTX Spark 笔记本将于 10 月 16</p>
+      <a class="card-link" href="https://aihot.news/items/ug7g6psicfobnnft0ebgpyl10" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：NVIDIA 官宣 RTX Spark 软件生态就绪，10 月 16 日笔记本上市">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">09</span>
+      <h3 class="card-title">千问发布AI眼镜N1/N1 Pro及首款AI耳夹式耳机并现货开售</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>公众号：千问APP（阿里）</span></span>
+        
+      </div>
+      <p class="card-summary">千问发布三款硬件新品：AI眼镜N1、N1 Pro和AI耳夹式耳机，今日在淘宝、天猫、京东、抖音等平台现货开售，</p>
+      <a class="card-link" href="https://aihot.news/items/bnwd1psqg66c268n4i1mal2pi" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：千问发布AI眼镜N1/N1 Pro及首款AI耳夹式耳机并现货开售">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">10</span>
+      <h3 class="card-title">LangChain 发布 langchain-scaledown 集成，用 ScaleDown 约束解码模型管理长时智能体上下文</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>LangChain：Blog（RSS）</span></span>
+        <span class="card-time">昨天 19:56</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/uljn62mk9ujyya1xg51hc6dp8" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：LangChain 发布 langchain-scaledown 集成，用 ScaleDown 约束解码模型管理长时智能体上下文">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">11</span>
+      <h3 class="card-title">ComfyUI 上线 NVIDIA VFX 节点，支持视频超分、补帧与 SDR 转 HDR</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Comfy Blog</span></span>
+        <span class="card-time">今天 03:41</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/uy1d8e2pcm6sked0p57flawpq" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：ComfyUI 上线 NVIDIA VFX 节点，支持视频超分、补帧与 SDR 转 HDR">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">12</span>
+      <h3 class="card-title">LangSmith 推出 AI Search，用自然语言按行为搜索 agent 轨迹</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>LangChain：Blog（RSS）</span></span>
+        <span class="card-time">昨天 20:59</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/cgbpvdepk4p1jrrawgzbfbxov" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：LangSmith 推出 AI Search，用自然语言按行为搜索 agent 轨迹">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-industry">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>行业动态</h2>
+    <span class="count">7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">13</span>
+      <h3 class="card-title">Character.AI 成立五年后申请 Chapter 11 破产，部分资产以 2000 万美元出售给 Disney</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>TechCrunch：AI（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Character.AI 已申请 Chapter 11 破产，法院文件显示其资产和负债在 5000 万至 1</p>
+      <a class="card-link" href="https://aihot.news/items/vwu0li2nl5hztqeztnq8b5udc" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Character.AI 成立五年后申请 Chapter 11 破产，部分资产以 2000 万美元出售给 Disney">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">14</span>
+      <h3 class="card-title">OpenAI 办公室发现窃密录音装置，涉事员工被捕</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：OpenAI Newsroom (@OpenAINewsroom)</span></span>
+        
+      </div>
+      <p class="card-summary">OpenAI 宣布在办公室内发现一个隐蔽的录音装置，利用自家模型分析该设备及其来源，确认是一名员工几天前安放。</p>
+      <a class="card-link" href="https://aihot.news/items/fgxi5gwvctlssc05odpcyf6ov" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenAI 办公室发现窃密录音装置，涉事员工被捕">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">15</span>
+      <h3 class="card-title">XBOW 团队借助 OpenAI GPT-5.6 Sol 获 Google Chrome 25 万美元全链漏洞赏金</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Vaibhav Srivastav（OpenAI）(@reach_vb)</span></span>
+        
+      </div>
+      <p class="card-summary">XBOW 团队使用 OpenAI 的 GPT-5.6 Sol 辅助，在 6 天内以 4 万美元算力构建出 Chrome</p>
+      <a class="card-link" href="https://aihot.news/items/ekphiltd4fdsskdlueleul8qa" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：XBOW 团队借助 OpenAI GPT-5.6 Sol 获 Google Chrome 25 万美元全链漏洞赏金">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">16</span>
+      <h3 class="card-title">Meta Muse Wonder (Max) 进入 Arena 榜单：WebDev 第15、文本第2</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Arena (@arena)</span></span>
+        <span class="card-time">今天 05:27</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/ob6ryetyialrnqhyjusr2s1iz" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Meta Muse Wonder (Max) 进入 Arena 榜单：WebDev 第15、文本第2">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">17</span>
+      <h3 class="card-title">ElevenLabs AI 重建嗓音助力 Baroness Campbell 在英国上议院发表演讲</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：ElevenLabs (@elevenlabs)</span></span>
+        <span class="card-time">昨天 23:58</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/tggiswcje6mz1ti081jfbro43" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：ElevenLabs AI 重建嗓音助力 Baroness Campbell 在英国上议院发表演讲">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">18</span>
+      <h3 class="card-title">Pydantic AI 创始人 Samuel Colvin：图库是个错误，代码本身就是图</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Pydantic AI 官方文章</span></span>
+        <span class="card-time">昨天 17:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/tmj0de0vmzpezz0o5j67nqskj" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Pydantic AI 创始人 Samuel Colvin：图库是个错误，代码本身就是图">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">19</span>
+      <h3 class="card-title">Manus 与 OPPO 合作，将 Agent 能力整合进 AI Mind Pilot</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Manus：Blog（网页）</span></span>
+        <span class="card-time">昨天 00:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/vfvwtsnxhg7yalg8miyxbvd40" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Manus 与 OPPO 合作，将 Agent 能力整合进 AI Mind Pilot">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-paper">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>论文研究</h2>
+    <span class="count">2 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">20</span>
+      <h3 class="card-title">Anthropic 强化针对蒸馏攻击的防御， reasoning token 提取量下降 10 到 100 倍</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Anthropic：Research（发表成果 · 网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 发布博客，介绍其针对 Claude 蒸馏攻击的新防御方法，</p>
+      <a class="card-link" href="https://aihot.news/items/lwchujhujmc1tdor61dn39irl" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 强化针对蒸馏攻击的防御， reasoning token 提取量下降 10 到 100 倍">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">21</span>
+      <h3 class="card-title">Hassabis 祝贺 AMIE 前瞻性临床研究发表于 The Lancet</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Demis Hassabis (@demishassabis)</span></span>
+        <span class="card-time">昨天 09:09</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/qbi6xi7a3re15txfell8i9a7c" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Hassabis 祝贺 AMIE 前瞻性临床研究发表于 The Lancet">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-tips">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>技巧与观点</h2>
+    <span class="count">1 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">22</span>
+      <h3 class="card-title">Anthropic 自研版本控制系统 Scion，五个月完成 monorepo 从 git 迁移</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Anthropic：Engineering（事故复盘 + 工程实践 · 网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 发布工程复盘，因 Claude 使日均合并代码量从 2026 年 5 月约 2,500 增至 9</p>
+      <a class="card-link" href="https://aihot.news/items/fpyjwv3o9zwxc9zs7j1bmnw8i" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 自研版本控制系统 Scion，五个月完成 monorepo 从 git 迁移">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-stats">
+    <span>共 <strong>22</strong> 条</span>
+    <span class="sep">·</span>
+    <span>5 大版块</span>
+    <span class="sep">·</span>
+    <span>2026 年 10 月 14 日 · 周三 · 北京时间</span>
+  </div>
+  <div class="footer-source">数据来自 <a href="https://aihot.news/daily/2026-10-14" target="_blank" rel="noopener noreferrer">AI HOT 日报</a></div>
+  <div class="footer-note">时间均为北京时间；第三方原文版权归原作者所有</div>
+</footer>
+
+<script>
+(function(){
+var supportsObserver='IntersectionObserver' in window;
+var sections=document.querySelectorAll('section[id]');
+var navLinks=document.querySelectorAll('.topnav-links button');
+function setActiveNav(id){navLinks.forEach(function(b){b.classList.toggle('active',b.dataset.target===id);});}
+navLinks.forEach(function(b){
+  b.addEventListener('click',function(){
+    var s=document.getElementById(b.dataset.target);
+    if(!s)return;
+    setActiveNav(s.id);
+    try{s.scrollIntoView({behavior:'smooth',block:'start'});}catch(_){s.scrollIntoView(true);}
+  });
+});
+function animateNum(el,target,duration){
+  var start=performance.now();
+  function tick(now){
+    var t=Math.min((now-start)/duration,1);
+    el.textContent=Math.round((1-Math.pow(1-t,3))*target);
+    if(t<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+var statNums=document.querySelectorAll('.stat-num[data-target]');
+if(supportsObserver){
+  var numObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var target=parseInt(e.target.dataset.target,10);
+        if(!isNaN(target))animateNum(e.target,target,1200);
+        numObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  statNums.forEach(function(el){numObserver.observe(el);});
+}else{
+  statNums.forEach(function(el){el.textContent=el.dataset.target;});
+}
+var cards=document.querySelectorAll('.card');
+if(supportsObserver){
+  var cardObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        e.target.style.transitionDelay=(i%6)*40+'ms';
+        e.target.classList.add('visible');
+        cardObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  cards.forEach(function(el){cardObserver.observe(el);});
+}else{
+  cards.forEach(function(el){el.classList.add('visible');});
+}
+if(supportsObserver){
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)setActiveNav(e.target.id);});
+  },{rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(function(s){spy.observe(s);});
+}
+})();
+</script>
+</body>
+</html>
