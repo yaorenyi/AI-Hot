@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="aihot-site">
+<title>AI 日报 · 2026-10-24</title>
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-primary:#FFF9F2;--bg-card:#FFFFFF;--bg-elevated:#FFF4E6;
+  --text-primary:#1A1A1A;--text-secondary:#5C5C5C;--text-muted:#8A8A8A;
+  --accent:#FF6B35;--accent-hover:#E85525;--accent-light:#FFE4D6;
+  --gradient:linear-gradient(135deg,#FF6B35 0%,#F7B801 100%);
+  --gradient-soft:linear-gradient(135deg,#FFE4D6 0%,#FFF4D6 100%);
+  --border:#F0E4D4;--border-hover:#FFB89A;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(255,107,53,0.08);
+  --shadow-hover:0 8px 28px rgba(255,107,53,0.16);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"SF Mono","Fira Code",Menlo,Consolas,monospace;
+  --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(255,249,242,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topnav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;overflow-x:auto}
+.topnav-brand{font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topnav-brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gradient);box-shadow:0 0 0 3px var(--accent-light);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--accent-light)}50%{box-shadow:0 0 0 6px rgba(255,107,53,0.15)}}
+.topnav-links{display:flex;gap:6px;flex:1}
+.topnav-links button{appearance:none;border:0;background:transparent;font:inherit;cursor:pointer;font-size:0.85rem;color:var(--text-secondary);padding:6px 12px;border-radius:999px;white-space:nowrap;transition:var(--transition)}
+.topnav-links button:hover,.topnav-links button.active{background:var(--accent-light);color:var(--accent)}
+.hero{padding:80px 24px 60px;text-align:center;background:var(--gradient-soft);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,0.15) 0%,transparent 70%)}
+.hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(247,184,1,0.18) 0%,transparent 70%)}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.date-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);font-size:0.85rem;color:var(--text-secondary);margin-bottom:20px;box-shadow:var(--shadow)}
+.date-badge .live{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:live-pulse 1.6s ease-out infinite}
+@keyframes live-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}100%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+.latest-badge{background:var(--accent-light);color:var(--accent);font-weight:600;padding:1px 8px;border-radius:999px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.hero h1 .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text-secondary);margin-bottom:12px}
+.hero-window{font-size:0.82rem;color:var(--text-muted);margin-bottom:36px}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;box-shadow:var(--shadow);transition:var(--transition)}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--border-hover)}
+.stat-num{font-size:2.2rem;font-weight:800;font-family:var(--font-mono);background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-label{font-size:0.78rem;color:var(--text-muted);margin-top:6px;letter-spacing:0.5px}
+.lead-wrap{max-width:1100px;margin:0 auto;padding:34px 24px 0}
+.lead{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow)}
+.lead .kicker{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:1px;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.lead h3{font-size:1.15rem;font-weight:700;line-height:1.5;margin-bottom:8px;letter-spacing:-0.2px}
+.lead p{font-size:0.92rem;color:var(--text-secondary)}
+.section{padding:52px 24px 20px;scroll-margin-top:64px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:2px dashed var(--border)}
+.section-head .icon{width:34px;height:34px;border-radius:10px;background:var(--gradient);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-head .icon svg{width:18px;height:18px;fill:#fff}
+.section-head h2{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+.section-head .count{font-size:0.8rem;color:var(--accent);background:var(--accent-light);font-family:var(--font-mono);padding:3px 10px;border-radius:999px;margin-left:auto;align-self:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:var(--transition)}
+html.js-ready .card{opacity:0;transform:translateY(16px)}
+html.js-ready .card.visible,.card.visible{opacity:1;transform:none}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.card:hover::before{transform:scaleX(1)}
+.card-num{position:absolute;top:14px;right:18px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:var(--bg-elevated);padding:2px 8px;border-radius:6px}
+.card-title{font-size:1.02rem;font-weight:600;line-height:1.45;margin-bottom:10px;padding-right:48px;letter-spacing:-0.2px}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.card-source{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--text-muted);padding:3px 10px;background:var(--bg-elevated);border-radius:999px;max-width:100%}
+.card-source svg{width:11px;height:11px;flex-shrink:0;opacity:0.6}
+.card-source span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-time{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;color:var(--text-muted);padding:3px 9px;border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);white-space:nowrap}
+.card-summary{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;flex:1}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--accent);margin-top:auto;align-self:flex-start;transition:var(--transition)}
+.card-link svg{width:14px;height:14px;transition:transform 0.2s ease}
+.card-link:hover{color:var(--accent-hover)}
+.card-link:hover svg{transform:translate(2px,-2px)}
+footer{margin-top:60px;padding:40px 24px;text-align:center;border-top:1px solid var(--border);background:var(--bg-elevated)}
+.footer-stats{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;font-size:0.85rem;color:var(--text-secondary)}
+.footer-stats .sep{color:var(--text-muted)}
+.footer-source{font-size:0.78rem;color:var(--text-muted);margin-top:8px}
+.footer-source a{color:var(--accent);font-weight:500}
+.footer-note{font-size:0.74rem;color:var(--text-muted);margin-top:6px}
+@media (max-width:768px){
+  .hero{padding:60px 20px 50px}
+  .lead-wrap{padding:24px 16px 0}
+  .section{padding:42px 16px 12px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:18px}
+  .topnav-inner{padding:12px 16px;gap:14px}
+  .section-head{flex-wrap:wrap;gap:10px}
+  .section-head .count{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="版块导航">
+  <div class="topnav-inner">
+    <div class="topnav-brand"><span class="dot"></span>AI 日报 · 10-24</div>
+    <div class="topnav-links">
+      <button type="button" data-target="sec-model">模型发布</button>
+      <button type="button" data-target="sec-product">产品发布</button>
+      <button type="button" data-target="sec-industry">行业动态</button>
+      <button type="button" data-target="sec-paper">论文研究</button>
+      <button type="button" data-target="sec-tips">技巧与观点</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="date-badge"><span class="live"></span>2026 年 10 月 24 日 · 周六 · 北京时间 </div>
+    <h1>今日 <span class="accent">AI</span> 圈发生了什么</h1>
+    <p class="hero-tagline">月之暗面发布 Kimi K3.1 Pro，100 万 token 上下文，开放权重将于 11 月 4 日前释出</p>
+    <p class="hero-window">收录区间：10 月 23 日 08:00 — 10 月 24 日 08:00（北京时间）</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num" data-target="15">0</div><div class="stat-label">今日条数</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="5">0</div><div class="stat-label">分类版块</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="14">0</div><div class="stat-label">精选信源</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="12">0</div><div class="stat-label">深度条目</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="3">0</div><div class="stat-label">快讯更新</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="lead-wrap"><div class="lead">
+  <span class="kicker">今日头条</span>
+  <h3>月之暗面发布 Kimi K3.1 Pro，100 万 token 上下文，开放权重将于 11 月 4 日前释出</h3>
+  <p>月之暗面发布 Kimi K3.1 系列首个模型 Kimi K3.1 Pro，为 3T 级开放权重模型，上下文窗口 100 万 token，</p>
+</div></div>
+
+<main>
+<section class="section" id="sec-model">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+    <h2>模型发布 / 更新</h2>
+    <span class="count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">01</span>
+      <h3 class="card-title">月之暗面发布 Kimi K3.1 Pro，100 万 token 上下文，开放权重将于 11 月 4 日前释出</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Moonshot AI：Kimi Blog</span></span>
+        
+      </div>
+      <p class="card-summary">月之暗面发布 Kimi K3.1 系列首个模型 Kimi K3.1 Pro，为 3T 级开放权重模型，</p>
+      <a class="card-link" href="https://aihot.news/items/okgjn7r72wo7c5j0bu3o1vbie" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：月之暗面发布 Kimi K3.1 Pro，100 万 token 上下文，开放权重将于 11 月 4 日前释出">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">02</span>
+      <h3 class="card-title">MiniMax 开放 M3.1 Flash 权重：428B 总参数、每 token 激活 23B</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：MiniMax (@MiniMax_AI)</span></span>
+        
+      </div>
+      <p class="card-summary">MiniMax 宣布 M3.1 Flash 权重公开，总参数 428B、每 token 激活 23B，</p>
+      <a class="card-link" href="https://aihot.news/items/h0u2sgf6ve6eeu0hmswp2a314" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：MiniMax 开放 M3.1 Flash 权重：428B 总参数、每 token 激活 23B">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">03</span>
+      <h3 class="card-title">Uber 向全体员工部署 ChatGPT Work</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>OpenAI：官网动态（RSS · 排除企业/客户案例）</span></span>
+        <span class="card-time">10 月 22 日 08:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/plii1wqnirx2d9s5weab5f45l" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Uber 向全体员工部署 ChatGPT Work">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">04</span>
+      <h3 class="card-title">Grok Bot 新增保存登录与支付信息</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Grok Bot (@bot)</span></span>
+        <span class="card-time">今天 03:43</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/za67o778vzhmeybim74u0noya" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Grok Bot 新增保存登录与支付信息">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-product">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" fill="none" stroke="#fff" stroke-width="2"/></svg></span>
+    <h2>产品发布 / 更新</h2>
+    <span class="count">2 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">05</span>
+      <h3 class="card-title">Kling 4.0 在 fal 上线并向所有客户开放 API 访问</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：fal (@fal)</span></span>
+        
+      </div>
+      <p class="card-summary">fal 宣布 Kling 4.0 正式向公众开放，所有客户均可通过 API 访问。</p>
+      <a class="card-link" href="https://aihot.news/items/dy6rkvc23lfrolo4y5hjg7evh" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Kling 4.0 在 fal 上线并向所有客户开放 API 访问">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">06</span>
+      <h3 class="card-title">禾赛发布三维世界数据引擎 Kosmo 及 8K AI 空间相机 Kosmo One</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>禾赛科技</span></span>
+        
+      </div>
+      <p class="card-summary">10 月 14 日，禾赛科技正式发布三维世界数据引擎 Kosmo，同步推出集成 8K 影像系统的 AI 空间相机</p>
+      <a class="card-link" href="https://aihot.news/items/jmd8cc56pi525th3tcccmzxqf" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：禾赛发布三维世界数据引擎 Kosmo 及 8K AI 空间相机 Kosmo One">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-industry">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>行业动态</h2>
+    <span class="count">6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">07</span>
+      <h3 class="card-title">OpenAI 详解前沿模型训练环境的安全加固与红队测试</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>OpenAI：官网动态（RSS · 排除企业/客户案例）</span></span>
+        
+      </div>
+      <p class="card-summary">OpenAI 介绍其前沿模型训练与评估环境的安全加固措施，包括训练期间不接入互联网、构建离线缓存网页世界、</p>
+      <a class="card-link" href="https://aihot.news/items/ss1c1fu81134agwcw2ae90gai" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenAI 详解前沿模型训练环境的安全加固与红队测试">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">08</span>
+      <h3 class="card-title">iPhone Duo 全球 Apple Store 正式开售，首台可折叠 iPhone 上架</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Apple：Newsroom（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">10 月 23 日，iPhone Duo 在全球 Apple Store 门店正式开售，</p>
+      <a class="card-link" href="https://aihot.news/items/pjmxomdu7pnp68ckyfels66mt" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：iPhone Duo 全球 Apple Store 正式开售，首台可折叠 iPhone 上架">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">09</span>
+      <h3 class="card-title">国务院办公厅印发意见：增强 AI 创造就业正面效应，减缓就业替代影响</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>IT之家·人工智能</span></span>
+        
+      </div>
+      <p class="card-summary">国务院办公厅 10 月 23 日印发《关于适应人工智能技术发展助力构建就业友好型发展方式的意见》，</p>
+      <a class="card-link" href="https://aihot.news/items/shi5tga503u6jcb3itberbm18" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：国务院办公厅印发意见：增强 AI 创造就业正面效应，减缓就业替代影响">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">10</span>
+      <h3 class="card-title">Latent Space 梳理 PHP2Shell 漏洞事件：OpenAI Patch the Planet 与 Wiz 各自发现 PHP 核心漏洞</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Latent Space（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Latent Space 的 AINews 汇总梳理了 PHP 核心漏洞</p>
+      <a class="card-link" href="https://aihot.news/items/ih894crlfahslc0pttsw80r0c" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Latent Space 梳理 PHP2Shell 漏洞事件：OpenAI Patch the Planet 与 Wiz 各自发现 PHP 核心漏洞">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">11</span>
+      <h3 class="card-title">WSJ：OpenAI 因 Signal 阅后即焚聊天解雇 3 名安全研究员</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Rohan Paul (@rohanpaul_ai)</span></span>
+        
+      </div>
+      <p class="card-summary">据 WSJ 报道，OpenAI 安全人员发现 3 名安全研究员与一名外部安全研究员使用阅后即焚的 Signal</p>
+      <a class="card-link" href="https://aihot.news/items/mc8widr5lukck9npmgeat917x" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：WSJ：OpenAI 因 Signal 阅后即焚聊天解雇 3 名安全研究员">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">12</span>
+      <h3 class="card-title">OpenAI 下调估值目标至 1.25 万亿美元，拟融资至多 300 亿美元</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>The Decoder：AI News（RSS）</span></span>
+        <span class="card-time">昨天 17:49</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/qexf6est4uitwd71p3ugedxo6" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenAI 下调估值目标至 1.25 万亿美元，拟融资至多 300 亿美元">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-paper">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>论文研究</h2>
+    <span class="count">2 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">13</span>
+      <h3 class="card-title">Anthropic 分析 Claude Mythos 5 在 UK AISI CTF 测试中的对齐失当行为</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Anthropic：Research（发表成果 · 网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 发布对 Claude Mythos 5 对齐问题的评估报告。</p>
+      <a class="card-link" href="https://aihot.news/items/poiju1x1007ttnz9cc4ioj6ro" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 分析 Claude Mythos 5 在 UK AISI CTF 测试中的对齐失当行为">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">14</span>
+      <h3 class="card-title">Anthropic 介绍 Claude Duet 智能体的安全、隐私与凭证隔离设计</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Claude：Blog（网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 发文介绍处于研究预览阶段的 Claude Duet 智能体的安全与隐私设计。</p>
+      <a class="card-link" href="https://aihot.news/items/g9tc56izmwy49zgw5ta4ubsya" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 介绍 Claude Duet 智能体的安全、隐私与凭证隔离设计">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-tips">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>技巧与观点</h2>
+    <span class="count">1 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">15</span>
+      <h3 class="card-title">Sundar Pichai 解释 Demis Hassabis 退出 DeepMind 日常管理与 Jeff Dean 离职</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Alex Heath (@alexeheath)</span></span>
+        
+      </div>
+      <p class="card-summary">Sundar Pichai 在访谈中解释 Demis Hassabis 逐步退出 DeepMind 日常管理和</p>
+      <a class="card-link" href="https://aihot.news/items/ryf4bbjezfib8jx05ng0889zf" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Sundar Pichai 解释 Demis Hassabis 退出 DeepMind 日常管理与 Jeff Dean 离职">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-stats">
+    <span>共 <strong>15</strong> 条</span>
+    <span class="sep">·</span>
+    <span>5 大版块</span>
+    <span class="sep">·</span>
+    <span>2026 年 10 月 24 日 · 周六 · 北京时间</span>
+  </div>
+  <div class="footer-source">数据来自 <a href="https://aihot.news/daily/2026-10-24" target="_blank" rel="noopener noreferrer">AI HOT 日报</a></div>
+  <div class="footer-note">时间均为北京时间；第三方原文版权归原作者所有</div>
+</footer>
+
+<script>
+(function(){
+var supportsObserver='IntersectionObserver' in window;
+var sections=document.querySelectorAll('section[id]');
+var navLinks=document.querySelectorAll('.topnav-links button');
+function setActiveNav(id){navLinks.forEach(function(b){b.classList.toggle('active',b.dataset.target===id);});}
+navLinks.forEach(function(b){
+  b.addEventListener('click',function(){
+    var s=document.getElementById(b.dataset.target);
+    if(!s)return;
+    setActiveNav(s.id);
+    try{s.scrollIntoView({behavior:'smooth',block:'start'});}catch(_){s.scrollIntoView(true);}
+  });
+});
+function animateNum(el,target,duration){
+  var start=performance.now();
+  function tick(now){
+    var t=Math.min((now-start)/duration,1);
+    el.textContent=Math.round((1-Math.pow(1-t,3))*target);
+    if(t<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+var statNums=document.querySelectorAll('.stat-num[data-target]');
+if(supportsObserver){
+  var numObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var target=parseInt(e.target.dataset.target,10);
+        if(!isNaN(target))animateNum(e.target,target,1200);
+        numObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  statNums.forEach(function(el){numObserver.observe(el);});
+}else{
+  statNums.forEach(function(el){el.textContent=el.dataset.target;});
+}
+var cards=document.querySelectorAll('.card');
+if(supportsObserver){
+  var cardObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        e.target.style.transitionDelay=(i%6)*40+'ms';
+        e.target.classList.add('visible');
+        cardObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  cards.forEach(function(el){cardObserver.observe(el);});
+}else{
+  cards.forEach(function(el){el.classList.add('visible');});
+}
+if(supportsObserver){
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)setActiveNav(e.target.id);});
+  },{rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(function(s){spy.observe(s);});
+}
+})();
+</script>
+</body>
+</html>
