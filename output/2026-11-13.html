@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="aihot-site">
+<title>AI 日报 · 2026-11-13</title>
+<script>document.documentElement.classList.add('js-ready');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-primary:#FFF9F2;--bg-card:#FFFFFF;--bg-elevated:#FFF4E6;
+  --text-primary:#1A1A1A;--text-secondary:#5C5C5C;--text-muted:#8A8A8A;
+  --accent:#FF6B35;--accent-hover:#E85525;--accent-light:#FFE4D6;
+  --gradient:linear-gradient(135deg,#FF6B35 0%,#F7B801 100%);
+  --gradient-soft:linear-gradient(135deg,#FFE4D6 0%,#FFF4D6 100%);
+  --border:#F0E4D4;--border-hover:#FFB89A;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(255,107,53,0.08);
+  --shadow-hover:0 8px 28px rgba(255,107,53,0.16);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"SF Mono","Fira Code",Menlo,Consolas,monospace;
+  --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(255,249,242,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topnav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;overflow-x:auto}
+.topnav-brand{font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topnav-brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gradient);box-shadow:0 0 0 3px var(--accent-light);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--accent-light)}50%{box-shadow:0 0 0 6px rgba(255,107,53,0.15)}}
+.topnav-links{display:flex;gap:6px;flex:1}
+.topnav-links button{appearance:none;border:0;background:transparent;font:inherit;cursor:pointer;font-size:0.85rem;color:var(--text-secondary);padding:6px 12px;border-radius:999px;white-space:nowrap;transition:var(--transition)}
+.topnav-links button:hover,.topnav-links button.active{background:var(--accent-light);color:var(--accent)}
+.hero{padding:80px 24px 60px;text-align:center;background:var(--gradient-soft);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,0.15) 0%,transparent 70%)}
+.hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(247,184,1,0.18) 0%,transparent 70%)}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.date-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);font-size:0.85rem;color:var(--text-secondary);margin-bottom:20px;box-shadow:var(--shadow)}
+.date-badge .live{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:live-pulse 1.6s ease-out infinite}
+@keyframes live-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}100%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+.latest-badge{background:var(--accent-light);color:var(--accent);font-weight:600;padding:1px 8px;border-radius:999px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+.hero h1 .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text-secondary);margin-bottom:12px}
+.hero-window{font-size:0.82rem;color:var(--text-muted);margin-bottom:36px}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;box-shadow:var(--shadow);transition:var(--transition)}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--border-hover)}
+.stat-num{font-size:2.2rem;font-weight:800;font-family:var(--font-mono);background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-label{font-size:0.78rem;color:var(--text-muted);margin-top:6px;letter-spacing:0.5px}
+.lead-wrap{max-width:1100px;margin:0 auto;padding:34px 24px 0}
+.lead{background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow)}
+.lead .kicker{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:1px;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.lead h3{font-size:1.15rem;font-weight:700;line-height:1.5;margin-bottom:8px;letter-spacing:-0.2px}
+.lead p{font-size:0.92rem;color:var(--text-secondary)}
+.section{padding:52px 24px 20px;scroll-margin-top:64px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:2px dashed var(--border)}
+.section-head .icon{width:34px;height:34px;border-radius:10px;background:var(--gradient);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-head .icon svg{width:18px;height:18px;fill:#fff}
+.section-head h2{font-size:1.5rem;font-weight:700;letter-spacing:-0.3px}
+.section-head .count{font-size:0.8rem;color:var(--accent);background:var(--accent-light);font-family:var(--font-mono);padding:3px 10px;border-radius:999px;margin-left:auto;align-self:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:var(--transition)}
+html.js-ready .card{opacity:0;transform:translateY(16px)}
+html.js-ready .card.visible,.card.visible{opacity:1;transform:none}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.card:hover::before{transform:scaleX(1)}
+.card-num{position:absolute;top:14px;right:18px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:var(--bg-elevated);padding:2px 8px;border-radius:6px}
+.card-title{font-size:1.02rem;font-weight:600;line-height:1.45;margin-bottom:10px;padding-right:48px;letter-spacing:-0.2px}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.card-source{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--text-muted);padding:3px 10px;background:var(--bg-elevated);border-radius:999px;max-width:100%}
+.card-source svg{width:11px;height:11px;flex-shrink:0;opacity:0.6}
+.card-source span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-time{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;color:var(--text-muted);padding:3px 9px;border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);white-space:nowrap}
+.card-summary{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;flex:1}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--accent);margin-top:auto;align-self:flex-start;transition:var(--transition)}
+.card-link svg{width:14px;height:14px;transition:transform 0.2s ease}
+.card-link:hover{color:var(--accent-hover)}
+.card-link:hover svg{transform:translate(2px,-2px)}
+footer{margin-top:60px;padding:40px 24px;text-align:center;border-top:1px solid var(--border);background:var(--bg-elevated)}
+.footer-stats{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;font-size:0.85rem;color:var(--text-secondary)}
+.footer-stats .sep{color:var(--text-muted)}
+.footer-source{font-size:0.78rem;color:var(--text-muted);margin-top:8px}
+.footer-source a{color:var(--accent);font-weight:500}
+.footer-note{font-size:0.74rem;color:var(--text-muted);margin-top:6px}
+@media (max-width:768px){
+  .hero{padding:60px 20px 50px}
+  .lead-wrap{padding:24px 16px 0}
+  .section{padding:42px 16px 12px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:18px}
+  .topnav-inner{padding:12px 16px;gap:14px}
+  .section-head{flex-wrap:wrap;gap:10px}
+  .section-head .count{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="版块导航">
+  <div class="topnav-inner">
+    <div class="topnav-brand"><span class="dot"></span>AI 日报 · 11-13</div>
+    <div class="topnav-links">
+      <button type="button" data-target="sec-model">模型发布</button>
+      <button type="button" data-target="sec-product">产品发布</button>
+      <button type="button" data-target="sec-industry">行业动态</button>
+      <button type="button" data-target="sec-paper">论文研究</button>
+      <button type="button" data-target="sec-tips">技巧与观点</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="date-badge"><span class="live"></span>2026 年 11 月 13 日 · 周五 · 北京时间 </div>
+    <h1>今日 <span class="accent">AI</span> 圈发生了什么</h1>
+    <p class="hero-tagline">NVIDIA 宣布 CEO 变动：Jensen Huang 辞任，CFO Colette Kress 出任临时 CEO</p>
+    <p class="hero-window">收录区间：11 月 12 日 08:00 — 11 月 13 日 08:00（北京时间）</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num" data-target="19">0</div><div class="stat-label">今日条数</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="5">0</div><div class="stat-label">分类版块</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="16">0</div><div class="stat-label">精选信源</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="12">0</div><div class="stat-label">深度条目</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="7">0</div><div class="stat-label">快讯更新</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="lead-wrap"><div class="lead">
+  <span class="kicker">今日头条</span>
+  <h3>NVIDIA 宣布 CEO 变动：Jensen Huang 辞任，CFO Colette Kress 出任临时 CEO</h3>
+  <p>NVIDIA 董事会宣布 Jensen Huang 即刻辞去总裁、CEO 及董事职务，CFO Colette Kress 被任命为临时 CEO，直至选定永久继任者，</p>
+</div></div>
+
+<main>
+<section class="section" id="sec-model">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+    <h2>模型发布 / 更新</h2>
+    <span class="count">6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">01</span>
+      <h3 class="card-title">Google DeepMind 发布 Gemini 4 Hydrogen</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Google DeepMind：Blog（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Google DeepMind 发布 Gemini 4 Hydrogen，定位快速执行日常编码与智能体工作流，</p>
+      <a class="card-link" href="https://aihot.news/items/uy1ayrrlqx1snqsv4lub7whsa" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Google DeepMind 发布 Gemini 4 Hydrogen">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">02</span>
+      <h3 class="card-title">World Labs 开放世界模型 Atlas，支持生成关键帧、视频片段和 3D Gaussian splats</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Fei-Fei Li (@drfeifei, World Labs)</span></span>
+        <span class="card-time">今天 02:11</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/lazmov9ciw8y5uqpuda9qcizm" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：World Labs 开放世界模型 Atlas，支持生成关键帧、视频片段和 3D Gaussian splats">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">03</span>
+      <h3 class="card-title">Anthropic 发布 Claude Tag 创业公司使用指南</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Claude：Blog（网页）</span></span>
+        <span class="card-time">昨天 08:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/djhxmxr9hq0ekn8iwdqt5usih" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 发布 Claude Tag 创业公司使用指南">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">04</span>
+      <h3 class="card-title">OpenAI 用自动化红队训练提升 GPT-6 Astra 和 Sol 在高风险领域的模糊鲁棒性</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>OpenAI：Alignment 研究博客（RSS）</span></span>
+        <span class="card-time">昨天 16:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/yg97h3u5vthadivuv5po5f0aw" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenAI 用自动化红队训练提升 GPT-6 Astra 和 Sol 在高风险领域的模糊鲁棒性">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">05</span>
+      <h3 class="card-title">Grok Bot 1.0 发布，主打团队协作的 AI 智能体队友</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Grok Bot (@bot)</span></span>
+        <span class="card-time">昨天 02:22</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/yl9gdujoqcqyf76ih8c75nnx3" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Grok Bot 1.0 发布，主打团队协作的 AI 智能体队友">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">06</span>
+      <h3 class="card-title">Thinking Machines 开源 Inkling 2 Small 模型权重，采用 Apache 2.0 许可</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Thinking Machines (@thinkymachines)</span></span>
+        <span class="card-time">今天 04:50</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/qnfdpojlsa0nsd1h801kt1b9s" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Thinking Machines 开源 Inkling 2 Small 模型权重，采用 Apache 2.0 许可">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-product">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" fill="none" stroke="#fff" stroke-width="2"/></svg></span>
+    <h2>产品发布 / 更新</h2>
+    <span class="count">5 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">07</span>
+      <h3 class="card-title">Anthropic 推出 Claude Meetings，Claude 以参会者身份加入视频会议</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Claude：Blog（网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 推出 Claude Meetings beta，Claude 可作为可见参会者加入视频通话，</p>
+      <a class="card-link" href="https://aihot.news/items/l36ne5q2gsdx6thyia7fi10kn" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 推出 Claude Meetings，Claude 以参会者身份加入视频会议">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">08</span>
+      <h3 class="card-title">Anthropic 建议把 Claude Opus 5.5 作为知识工作的日常主力模型</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Claude：Blog（网页）</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 宣布 Claude Opus 5.5 成为 Pro、Max、</p>
+      <a class="card-link" href="https://aihot.news/items/t5pucqx6ac58z0ed1b0875ci0" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 建议把 Claude Opus 5.5 作为知识工作的日常主力模型">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">09</span>
+      <h3 class="card-title">Google 智能眼镜开放预购，12 月 10 日发货</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Josh Woodward (@joshwoodward, Google Labs VP)</span></span>
+        
+      </div>
+      <p class="card-summary">Josh Woodward 宣布 Google 智能眼镜开启预购，用户可在</p>
+      <a class="card-link" href="https://aihot.news/items/hjhcsj440ym8b7ynttcx4433j" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Google 智能眼镜开放预购，12 月 10 日发货">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">10</span>
+      <h3 class="card-title">Replit Agent 新增代购能力和 Google Ads 投放功能</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Replit：Blog（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">Replit 给 Replit Agent 新增两项能力：通过 Stripe Link 和 Visa 为企业代购物资，</p>
+      <a class="card-link" href="https://aihot.news/items/k7sfjumcmtq0zswb5yj5kmju1" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Replit Agent 新增代购能力和 Google Ads 投放功能">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">11</span>
+      <h3 class="card-title">Figma 3D transforms 开放测试上线，品牌团队分享用它制作发布视频的过程</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Figma AI / Agent / Make</span></span>
+        <span class="card-time">昨天 22:00</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/x751c9ptxg9qviw1ts32aoa79" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Figma 3D transforms 开放测试上线，品牌团队分享用它制作发布视频的过程">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-industry">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>行业动态</h2>
+    <span class="count">6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">12</span>
+      <h3 class="card-title">NVIDIA 宣布 CEO 变动：Jensen Huang 辞任，CFO Colette Kress 出任临时 CEO</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>NVIDIA：Newsroom（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">NVIDIA 董事会宣布 Jensen Huang 即刻辞去总裁、CEO 及董事职务，</p>
+      <a class="card-link" href="https://aihot.news/items/qsbjbz754aodhcijq56puh6va" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：NVIDIA 宣布 CEO 变动：Jensen Huang 辞任，CFO Colette Kress 出任临时 CEO">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">13</span>
+      <h3 class="card-title">Anthropic 官宣首次公开募股（IPO）</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Anthropic (@AnthropicAI)</span></span>
+        
+      </div>
+      <p class="card-summary">Anthropic 官方宣布启动首次公开募股（IPO），并公布入口 ipo.anthropic.com。</p>
+      <a class="card-link" href="https://aihot.news/items/k99zjo9hbtous9r6vmmz7pxyh" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Anthropic 官宣首次公开募股（IPO）">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">14</span>
+      <h3 class="card-title">Jensen Huang 辞任 Nvidia CEO 后对 AI 经济的五点影响分析</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Tomasz Tunguz 博客（VC 分析）</span></span>
+        
+      </div>
+      <p class="card-summary">Tomasz Tunguz 分析 Jensen Huang 即日辞任 Nvidia 总裁、</p>
+      <a class="card-link" href="https://aihot.news/items/ivpl9ziip8mpoa90avi3ke9pj" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Jensen Huang 辞任 Nvidia CEO 后对 AI 经济的五点影响分析">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">15</span>
+      <h3 class="card-title">民主党对 Nvidia 对华芯片销售启动调查，致函质疑黄仁勋与特朗普的安排</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>TechCrunch：AI（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">民主党议员 Rep. Richard Neal 和 Sen. Ron Wyden 就特朗普政府处理 Nvidia</p>
+      <a class="card-link" href="https://aihot.news/items/cfh0nazzl7eedgttz8n99fza4" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：民主党对 Nvidia 对华芯片销售启动调查，致函质疑黄仁勋与特朗普的安排">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">16</span>
+      <h3 class="card-title">Rohan Paul 类比乔布斯被逐，评 NVIDIA 放走黄仁勋</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>X：Rohan Paul (@rohanpaul_ai)</span></span>
+        
+      </div>
+      <p class="card-summary">Lex Fridman 发文称 NVIDIA 让黄仁勋离开对美国和人类都是巨大错误，</p>
+      <a class="card-link" href="https://aihot.news/items/k1kga19xtdab67lhplor8he8n" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Rohan Paul 类比乔布斯被逐，评 NVIDIA 放走黄仁勋">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">17</span>
+      <h3 class="card-title">Epoch AI 分析华为和林格尔数据中心，揭示中美算力差距</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>Epoch AI：Gradient Updates（RSS）</span></span>
+        <span class="card-time">今天 00:03</span>
+      </div>
+      <p class="card-summary">该条目来自 AI HOT 收录,点击查看原文详情。</p>
+      <a class="card-link" href="https://aihot.news/items/adkgofriq3tvp6qrawfc63yw4" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：Epoch AI 分析华为和林格尔数据中心，揭示中美算力差距">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="sec-tips">
+<div class="section-inner">
+  <div class="section-head">
+    <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h2>技巧与观点</h2>
+    <span class="count">2 条</span>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="card-num">18</span>
+      <h3 class="card-title">OpenRouter 详解自纠错网站本地化流水线：GPT-6.1 Sol 翻译 7 种语言全站约 $460</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>OpenRouter：Announcements（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">OpenRouter 上线简体中文、日语等 7 种语言 Beta 本地化，</p>
+      <a class="card-link" href="https://aihot.news/items/cve017k4le2q7l8x1bfr2xdjx" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenRouter 详解自纠错网站本地化流水线：GPT-6.1 Sol 翻译 7 种语言全站约 $460">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+
+    <article class="card">
+      <span class="card-num">19</span>
+      <h3 class="card-title">OpenRouter 实测六模型并给出四层防护，解决 AI Agent 无限循环烧钱问题</h3>
+      <div class="card-meta">
+        <span class="card-source"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg><span>OpenRouter：Announcements（RSS）</span></span>
+        
+      </div>
+      <p class="card-summary">OpenRouter 发布教程，讲解 AI Agent 因工具反复失败而陷入无限循环的成因，</p>
+      <a class="card-link" href="https://aihot.news/items/vq9nwgwhtm31cgoliyb7ydyde" target="_blank" rel="noopener noreferrer" aria-label="阅读原文：OpenRouter 实测六模型并给出四层防护，解决 AI Agent 无限循环烧钱问题">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </article>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-stats">
+    <span>共 <strong>19</strong> 条</span>
+    <span class="sep">·</span>
+    <span>5 大版块</span>
+    <span class="sep">·</span>
+    <span>2026 年 11 月 13 日 · 周五 · 北京时间</span>
+  </div>
+  <div class="footer-source">数据来自 <a href="https://aihot.news/daily/2026-11-13" target="_blank" rel="noopener noreferrer">AI HOT 日报</a></div>
+  <div class="footer-note">时间均为北京时间；第三方原文版权归原作者所有</div>
+</footer>
+
+<script>
+(function(){
+var supportsObserver='IntersectionObserver' in window;
+var sections=document.querySelectorAll('section[id]');
+var navLinks=document.querySelectorAll('.topnav-links button');
+function setActiveNav(id){navLinks.forEach(function(b){b.classList.toggle('active',b.dataset.target===id);});}
+navLinks.forEach(function(b){
+  b.addEventListener('click',function(){
+    var s=document.getElementById(b.dataset.target);
+    if(!s)return;
+    setActiveNav(s.id);
+    try{s.scrollIntoView({behavior:'smooth',block:'start'});}catch(_){s.scrollIntoView(true);}
+  });
+});
+function animateNum(el,target,duration){
+  var start=performance.now();
+  function tick(now){
+    var t=Math.min((now-start)/duration,1);
+    el.textContent=Math.round((1-Math.pow(1-t,3))*target);
+    if(t<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+var statNums=document.querySelectorAll('.stat-num[data-target]');
+if(supportsObserver){
+  var numObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var target=parseInt(e.target.dataset.target,10);
+        if(!isNaN(target))animateNum(e.target,target,1200);
+        numObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  statNums.forEach(function(el){numObserver.observe(el);});
+}else{
+  statNums.forEach(function(el){el.textContent=el.dataset.target;});
+}
+var cards=document.querySelectorAll('.card');
+if(supportsObserver){
+  var cardObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        e.target.style.transitionDelay=(i%6)*40+'ms';
+        e.target.classList.add('visible');
+        cardObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  cards.forEach(function(el){cardObserver.observe(el);});
+}else{
+  cards.forEach(function(el){el.classList.add('visible');});
+}
+if(supportsObserver){
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)setActiveNav(e.target.id);});
+  },{rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(function(s){spy.observe(s);});
+}
+})();
+</script>
+</body>
+</html>
